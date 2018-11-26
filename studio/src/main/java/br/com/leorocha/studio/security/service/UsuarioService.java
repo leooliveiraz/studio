@@ -1,4 +1,4 @@
-package br.com.leorocha.studio.service;
+package br.com.leorocha.studio.security.service;
 
 import java.util.ArrayList;
 import java.util.List;

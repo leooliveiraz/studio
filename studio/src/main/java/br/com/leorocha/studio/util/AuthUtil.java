@@ -1,14 +1,15 @@
 package br.com.leorocha.studio.util;
 
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import br.com.leorocha.studio.conf.security.jwt.TokenAuthenticationService;
 import br.com.leorocha.studio.entity.Usuario;
-import br.com.leorocha.studio.service.UsuarioService;
+import br.com.leorocha.studio.security.jwt.TokenAuthenticationService;
+import br.com.leorocha.studio.security.service.UsuarioService;
 @Component
 public class AuthUtil {
 	@Autowired
