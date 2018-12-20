@@ -35,13 +35,19 @@ public class TokenAuthenticationService {
     }
 
     public static Authentication getByToken(String token) {
-        String user = Jwts.parser()
-                .setSigningKey(SECRET)
-                .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
-                .getBody()
-                .getSubject();
+    	try {
+            String user = Jwts.parser()
+                    .setSigningKey(SECRET)
+                    .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
+                    .getBody()
+                    .getSubject();
 
-        return user != null ? new UsernamePasswordAuthenticationToken(user, null, null) : null;
+            return user != null ? new UsernamePasswordAuthenticationToken(user, null, null) : null;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
     }
 
     public static Authentication getAuthentication(HttpServletRequest request) {
