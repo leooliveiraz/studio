@@ -17,6 +17,7 @@ public class SenhaUtil  implements PasswordEncoder {
 			  hexString.append(String.format("%02X", 0xFF & b));
 			}
 			String senhaCriptgrafada = hexString.toString();
+			System.out.println(texto+"="+senhaCriptgrafada);
 			return senhaCriptgrafada;
 		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
 		  e.printStackTrace();

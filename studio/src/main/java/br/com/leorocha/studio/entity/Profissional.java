@@ -3,26 +3,20 @@
 package br.com.leorocha.studio.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.Data;
 @Data
 @Entity(name="profissional")
 public class Profissional implements Serializable {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = -5265476290615222908L;
 
-	/** Primary key. */
     protected static final String PK = "id";
 
     @Id
@@ -35,6 +29,4 @@ public class Profissional implements Serializable {
     private String descricao;
     @Column(nullable=false, length=3)
     private boolean ativo;
-    @OneToMany(mappedBy="profissional")
-    private List<AgendamentoServico> agendamentoServico;
 }

@@ -32,6 +32,4 @@ public class FormaPagamento implements Serializable {
     private String nome;
     @Column(nullable=false, length=3)
     private boolean ativo;
-    @OneToMany(mappedBy="formaPagamento")
-    private List<Agendamento> agendamento;
 }

@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 @Data
 @Entity(name="agendamento_servico")
@@ -40,8 +42,5 @@ public class AgendamentoServico implements Serializable {
     @ManyToOne(optional=false)
     @JoinColumn(name="id_servico", nullable=false)
     private Servico servico;
-    @ManyToOne(optional=false)
-    @JoinColumn(name="id_profissional", nullable=false)
-    private Profissional profissional;
 
 }
